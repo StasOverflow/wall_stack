@@ -13,11 +13,18 @@ def solution(heights, length):
             stack.append(H)
             block_count += 1
 
-        print('H is {0}, stack is {1}'.format(H, stack))
-
     return block_count
 
 
 if __name__ == '__main__':
+    from random import randint
+
     count = solution(heights=[8, 8, 5, 7, 9, 8, 7, 4, 8], length=9)
     print('Block count is {0}'.format(count))
+
+    N = randint(1, 1000000)
+    H = [randint(1, 1000000000) for _ in range(100000)]
+
+    count = solution(H, N)
+    print('Block count is {0}'.format(count))
+
