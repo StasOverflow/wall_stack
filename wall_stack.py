@@ -4,12 +4,12 @@ def solution(heights, length):
 
     for H in heights:
 
-        if len(stack) and stack[-1] > H:
+        while len(stack) and stack[-1] > H:
             stack.pop()
-        elif len(stack) and stack[-1] == H:
-            continue
 
-        if not(len(stack)) or stack[-1] < H:
+        if len(stack) and stack[-1] == H:
+            continue
+        else:
             stack.append(H)
             block_count += 1
 
